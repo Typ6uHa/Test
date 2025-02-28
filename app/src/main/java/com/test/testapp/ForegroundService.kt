@@ -101,7 +101,7 @@ class ForegroundService : Service() {
     }
 
     private fun launchMainActivity() {
-        val activityIntent = Intent(this@ForegroundService, MainActivity::class.java)
+        val activityIntent = Intent(this@ForegroundService, AddActivity::class.java)
             .apply {
                 addFlags(
                     Intent.FLAG_ACTIVITY_NEW_TASK or

@@ -16,6 +16,12 @@
 
         <activity
             android:name=".MainActivity"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".AddActivity"
+            android:excludeFromRecents="true"
             android:exported="true" />
 
         <receiver
@@ -28,7 +34,7 @@
         </receiver>
 
         <service
-            android:name=".MyForegroundService"
+            android:name=".ForegroundService"
             android:exported="false"
             android:foregroundServiceType="dataSync" />
     </application>

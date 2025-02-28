@@ -2,6 +2,7 @@ package com.test.testapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.test.testapp.permission.PermissionManager
 
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(FrameLayout(this))
 
         // можно через di, но думаю тут будет слишком
         permissionManager = PermissionManager(this, this)
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startMyForegroundService() {
-        val serviceIntent = Intent(this, MyForegroundService::class.java)
+        val serviceIntent = Intent(this, ForegroundService::class.java)
         startForegroundService(serviceIntent)
+        finish()
     }
 }
